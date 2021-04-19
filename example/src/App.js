@@ -1,10 +1,22 @@
 import React from 'react'
 
-import { ExampleComponent } from 'tag-selector'
-import 'tag-selector/dist/index.css'
+import { TagSelector } from 'tag-selector'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+ 
+  const handleTagsUpdated = (tags) => {
+    console.log('TAGS', tags)
+  }
+
+  return <div style={{display: 'flex', justifyContent: 'center', padding:'20px'}}>
+  <div style={{width: '250px'}}>
+    <TagSelector 
+    title='something'
+    placeholder='another'
+    onTagsUpdated={handleTagsUpdated}
+    />
+    </div>
+  </div>
 }
 
 export default App

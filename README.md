@@ -13,15 +13,23 @@ npm install --save tag-selector
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
+import TagSelector from './tag-selector'
+export const Example = () => {
 
-import MyComponent from 'tag-selector'
-import 'tag-selector/dist/index.css'
-
-class Example extends Component {
-  render() {
-    return <MyComponent />
+  const handleTagsUpdated = (tags) => {
+    console.log('TAGS', tags)
   }
+
+  return <div style={{display: 'flex', justifyContent: 'center', padding:'20px'}}>
+  <div style={{width: '250px'}}>
+    <TagSelector 
+    title='something'
+    placeholder='another'
+    onTagsUpdated={handleTagsUpdated}
+    />
+    </div>
+  </div>
 }
 ```
 
